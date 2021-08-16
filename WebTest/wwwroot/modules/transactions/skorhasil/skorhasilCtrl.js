@@ -6,16 +6,13 @@
 
             $scope.skorhasil = {};
             $scope.hasilPertandingan = $localstorage.getObject("hasilPertandingan");
-            $scope.skorhasil.hasilPertandinganId = $scope.hasilPertandingan.id_hasil;
-            console.log($scope.hasilPertandingan);
-            $timeout(getSkorhasil, 500);
+            $scope.skorhasil.hasilPertandinganId = $scope.hasilPertandingan.id;
+            console.log($scope.skorhasil);
+            $scope.filterId = $scope.hasilPertandingan.id;
+            $timeout(getSkorhasil($scope.skorhasil.hasilPertandinganId), 500);
             $timeout(getTim, 500);
             $timeout(getPemain, 500);
             //$scope.filterHasil = [$scope.hasilPertandingan.id]; 
-        }
-
-        $scope.Check = function (item) {
-            $scope.filterId = item.hasilPertandinganId;
         }
 
         function getSkorhasil(hasilPertandinganId) {

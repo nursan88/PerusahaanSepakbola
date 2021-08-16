@@ -12,7 +12,7 @@ namespace WebTest.Data.Table.Transaksi
         public HasilPertandingan HasilPertandingan { get; set; }
         public int? HasilPertandinganId { get; set; }
         public Tim Tim { get; set; }
-        public int? TimId_tim { get; set; }
+        public long? TimId_tim { get; set; }
         public Pemain Pemain { get; set; }
         public int? PemainId_pemain { get; set; }
         public int Skor { get; set; }
