@@ -1,25 +1,25 @@
 (function () {
     'use strict';
     app.controller('SkorhasilCtrl', ['$scope', '$timeout', '$localstorage', 'masterServices', 'transaksiServices', 'toastr', function ($scope, $timeout, $localstorage, masterServices, transaksiServices, toastr) {
-        
+
         $scope.initLoad = function () {
 
             $scope.skorhasil = {};
             $scope.hasilPertandingan = $localstorage.getObject("hasilPertandingan");
-            $scope.detail.HasilPertandinganId = $scope.hasilPertandingan.id_hasil;
+            $scope.skorhasil.hasilPertandinganId = $scope.hasilPertandingan.id_hasil;
+            console.log($scope.hasilPertandingan);
             $timeout(getSkorhasil, 500);
             $timeout(getTim, 500);
             $timeout(getPemain, 500);
-            $scope.filterHasil = [$scope.hasilPertandingan.id];
-            console.log($scope.filterHasil);
+            //$scope.filterHasil = [$scope.hasilPertandingan.id]; 
         }
 
         $scope.Check = function (item) {
-            $scope.filterId = item.timId_tim;
+            $scope.filterId = item.hasilPertandinganId;
         }
 
-        function getSkorhasil() {
-            var a = masterServices.GetSkorhasil();
+        function getSkorhasil(hasilPertandinganId) {
+            var a = masterServices.GetSkorhasil(hasilPertandinganId);
             a.then(function (response) {
                 $scope.listDetail = response.data;
             },

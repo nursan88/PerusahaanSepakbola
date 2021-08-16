@@ -12,11 +12,11 @@ namespace WebTest.Data.Repository.Transaksi
     {
         private readonly MasterDbContext context = new MasterDbContext();
       
-        public async Task<List<SkorHasil>> GetAll()
+        public async Task<List<SkorHasil>> GetAll(int hasilPertandinganId)
         {
             using (var context = new MasterDbContext())
             {
-                var model = await context.SkorHasils.ToListAsync();
+                var model = await context.SkorHasils.Where(x => x.HasilPertandinganId == hasilPertandinganId).ToListAsync();
                 return model;
             }
         }

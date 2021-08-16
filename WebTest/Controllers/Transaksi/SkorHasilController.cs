@@ -21,11 +21,11 @@ namespace WebTest.Controllers.Transaksi
         {
             return View();
         }
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll(int hasilPertandinganId)
         {
             try
             {
-                var model = await _detail.GetAll();
+                var model = await _detail.GetAll(hasilPertandinganId);
                 return Ok(model);
             }
             catch (Exception ex)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Nursan\\WebTest\\WebTest\\WebTest.csproj": {}
+    "C:\\Users\\Muhkarom\\Documents\\GitHub\\PerusahaanSepakbola\\WebTest\\WebTest.csproj": {}
   },
   "projects": {
-    "C:\\Nursan\\WebTest\\WebTest\\WebTest.csproj": {
+    "C:\\Users\\Muhkarom\\Documents\\GitHub\\PerusahaanSepakbola\\WebTest\\WebTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Nursan\\WebTest\\WebTest\\WebTest.csproj",
+        "projectUniqueName": "C:\\Users\\Muhkarom\\Documents\\GitHub\\PerusahaanSepakbola\\WebTest\\WebTest.csproj",
         "projectName": "WebTest",
-        "projectPath": "C:\\Nursan\\WebTest\\WebTest\\WebTest.csproj",
+        "projectPath": "C:\\Users\\Muhkarom\\Documents\\GitHub\\PerusahaanSepakbola\\WebTest\\WebTest.csproj",
         "packagesPath": "C:\\Users\\Muhkarom\\.nuget\\packages\\",
-        "outputPath": "C:\\Nursan\\WebTest\\WebTest\\obj\\",
+        "outputPath": "C:\\Users\\Muhkarom\\Documents\\GitHub\\PerusahaanSepakbola\\WebTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -8,6 +8,6 @@ namespace WebTest.Data.Contract.Transaksi
 {
     public interface ISkorhasil
     {
-        Task<List<SkorHasil>> GetAll();
+        Task<List<SkorHasil>> GetAll(int hasilPertandinganId);
     }
 }

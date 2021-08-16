@@ -17,11 +17,10 @@
                     <thead>
                         <tr>
                             <th hidden>Id </th>
-                            <th>Skor Tim Tamu</th>
-                            <th>Skor Tuan Rumah</th>
+                            <th>Tim</th>
                             <th>Pencetak Gol</th>
+                            <th>Skor</th>
                             <th>Waktu Cetak</th>
-                            <th>Status Aktif</th>
                         </tr>
                     </thead>
                     <tbody ng-repeat="item in listDetail">
@@ -30,20 +29,17 @@
                                 {{item.id}}
                             </td>
                             <td>
-                                {{item.tim}}
+                                {{item.tim.namaTim}}
                             </td>
                             <td>
-                                {{item.pemain}}
+                                {{item.pemain.namaPemain}}
                             </td>
                             <td>
                                 {{item.skor}}
                             </td>
                             <td>
                                 {{item.menitSkor}}
-                            </td>
-                            <td>
-                                {{item.flag}}
-                            </td>
+                            </td> 
                         </tr>
                     </tbody>
                 </table>

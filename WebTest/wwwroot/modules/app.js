@@ -697,7 +697,10 @@ app.service("masterServices", function ($http, urlService) {
         return $http.get(
             url + "Detail/GetAll");
     };
-
+    this.GetSkorhasil = function (hasilPertandinganId) {
+        return $http.get(
+            url + "Skorhasil/GetAll?hasilPertandinganId=" + hasilPertandinganId);
+    };
     //#endregion
 });
 

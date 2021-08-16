@@ -19,5 +19,10 @@ namespace WebTest.Controllers.Transaksi
             ViewBag.Title = "Hasil Pertandingan";
             return View();
         }
+        public IActionResult SkorHasil()
+        {
+            ViewBag.Title = "Skor Hasil";
+            return View();
+        }
     }
 }

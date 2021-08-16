@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    app.controller('HasilCtrl', ['$scope', '$timeout', '$localstorage', 'masterServices', 'transaksiServices', 'toastr', function ($scope, $timeout, $localstorage, masterServices, transaksiServices, toastr) {
+    app.controller('HasilCtrl', ['$scope', '$timeout', '$localstorage', 'urlService', 'masterServices', 'transaksiServices', 'toastr', function ($scope, $timeout, $localstorage, urlService, masterServices, transaksiServices, toastr) {
         $scope.Simpan = function () {
             var a = transaksiServices.SimpanHasil($scope.hasil);
             a.then(function (response) {
@@ -84,7 +84,7 @@
         $scope.Skorhasil = function (item) {
             $localstorage.setObject("hasilPertandingan", item);
             var url = urlService.get();
-            $localstorage.set('urlBack', url + 'Transaksi/SkorHasil');
+            $localstorage.set('urlBack', url + 'Transaksi/HasilPertandingan');
             window.location.href = url + 'Transaksi/SkorHasil';
         }
 
