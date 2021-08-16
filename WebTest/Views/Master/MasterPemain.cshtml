@@ -1,0 +1,116 @@
+﻿
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>@ViewBag.Title</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <strong>@ViewBag.Title</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div ng-controller="PemainCtrl">
+    <div class="wrapper wrapper-content  animated fadeInRight" ng-init="initLoad()">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="Id">Id</label>
+                            <input disabled type="text" ng-model="pemain.id_Pemain" name="Id_pemain" class="form-control" id="Id_pemain" placeholder="Id">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Pegawai">Nama Pemain</label>
+                            <input type="text" ng-model="pemain.namaPemain" class="form-control" name="nama" id="NamaPemain" placeholder="namaPemain">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="tim">Tim Pemain</label>
+                            <select class="form-control" title="Tim" ng-model="pemain.timPemainId_tim" ng-options="item.id_tim as item.namaTim for item in listTim"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Pegawai">Tinggi Badan</label>
+                            <input type="number" ng-model="pemain.tinggiBadan" class="form-control" name="pemain" id="TinggiBadan" placeholder="tinggiBadan">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Pegawai">Berat Badan</label>
+                            <input type="number" ng-model="pemain.beratBadan" class="form-control" name="pemain" id="BeratBadan" placeholder="beratBadan">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Pegawai">No Punggung</label>
+                            <input type="number" ng-model="pemain.noPunggung" ng-change="checkNo(pemain.noPunggung,pemain.timPemainId_tim)" class="form-control" name="pemain" id="NoPunggung" placeholder="noPunggung">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="posisi">Posisi</label>
+                            <select class="form-control" title="Posisi" ng-model="pemain.posisiPemainId" ng-options="item.id_posisi as item.posisiPemain for item in listPosisi"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="checkbox" ng-model="pemain.flag" name="flag" class="i-checks" id="Flag" ng-checked=true>
+                            <label for="Flag">Status Aktif</label>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:25px;">
+                        <div class="col-lg-12">
+                            <div class="col-lg-3">
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Simpan()">Simpan</button> <button style="width:100px;" class="btn btn-primary" ng-click="Hapus()">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-12" style="margin-top:10px; margin-bottom:10px">
+                <div class="col-lg-3">
+                    <label for="filterTim">Cari Berdasarkan Tim</label>
+                    <select class="form-control" title="Tim" ng-model="cariFilter" ng-options="item.id_tim as item.namaTim for item in listTim"></select>
+                    <button style="width:100px;margin-top:10px" class="btn btn-primary" ng-click="Cari(cariFilter)">Cari</button>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th hidden>Id </th>
+                            <th>Nama Pemain</th>
+                            <th>Tim Pemain</th>
+                            <th>Tinggi Badan</th>
+                            <th>Berat Badan</th>
+                            <th>Posisi</th>
+                            <th>No Punggung</th>
+                            <th>Status Aktif</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in listPemain">
+                        <tr class="clickableRow" ng-click="selectTableRow($index, item)" ng-class="{selected : item.id_pemain === selectedIdPemain}">
+                            <td hidden>
+                                {{item.id_pemain}}
+                            </td>
+                            <td>
+                                {{item.namaPemain}}
+                            </td>
+                            <td>
+                                {{item.timPemain.namaTim}}
+                            </td>
+                            <td>
+                                {{item.tinggiBadan}}
+                            </td>
+                            <td>
+                                {{item.beratBadan}}
+                            </td>
+                            <td>
+                                {{item.posisiPemain.posisiPemain}}
+                            </td>
+                            <td>
+                                {{item.noPunggung}}
+                            </td>
+                            <td>
+                                {{item.flag}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

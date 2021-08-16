@@ -1,0 +1,124 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="Data\Contract\Delete\**" />
+    <Compile Remove="Data\Repository\Delete\**" />
+    <Compile Remove="obj\**" />
+    <Content Remove="bin\**" />
+    <Content Remove="Data\Contract\Delete\**" />
+    <Content Remove="Data\Repository\Delete\**" />
+    <Content Remove="obj\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="Data\Contract\Delete\**" />
+    <EmbeddedResource Remove="Data\Repository\Delete\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <None Remove="bin\**" />
+    <None Remove="Data\Contract\Delete\**" />
+    <None Remove="Data\Repository\Delete\**" />
+    <None Remove="obj\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\modules\masters\tim\timCtrl.js" />
+    <Content Remove="wwwroot\modules\transactions\hasil\hasilCtrl.js" />
+    <Content Remove="wwwroot\modules\transactions\jadwal\jadwalCtrl.js" />
+    <Content Remove="wwwroot\modules\transactions\skorhasil\skorhasilCtrl.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Master\MasterPemain.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="wwwroot\lib\angular\amcharts.js" />
+    <None Include="wwwroot\lib\angular\ammap.js" />
+    <None Include="wwwroot\lib\angular\amstock.js" />
+    <None Include="wwwroot\lib\angular\angular-animate.js" />
+    <None Include="wwwroot\lib\angular\angular-chart.js" />
+    <None Include="wwwroot\lib\angular\angular-chartist.js" />
+    <None Include="wwwroot\lib\angular\angular-cookies.min.js" />
+    <None Include="wwwroot\lib\angular\angular-filter.js" />
+    <None Include="wwwroot\lib\angular\angular-morris-chart.min.js" />
+    <None Include="wwwroot\lib\angular\angular-progress-button-styles.min.js" />
+    <None Include="wwwroot\lib\angular\angular-route.js" />
+    <None Include="wwwroot\lib\angular\angular-slimscroll.js" />
+    <None Include="wwwroot\lib\angular\angular-table.js" />
+    <None Include="wwwroot\lib\angular\angular-toastr.tpls.js" />
+    <None Include="wwwroot\lib\angular\angular-touch.js" />
+    <None Include="wwwroot\lib\angular\angular-ui-router.js" />
+    <None Include="wwwroot\lib\angular\angular.js" />
+    <None Include="wwwroot\lib\angular\angulardnd.js" />
+    <None Include="wwwroot\lib\angular\bootstrap-select.js" />
+    <None Include="wwwroot\lib\angular\bootstrap-switch.js" />
+    <None Include="wwwroot\lib\angular\bootstrap-tagsinput.js" />
+    <None Include="wwwroot\lib\angular\Chart.js" />
+    <None Include="wwwroot\lib\angular\chartist.min.js" />
+    <None Include="wwwroot\lib\angular\checklist-model.js" />
+    <None Include="wwwroot\lib\angular\dropdown.js" />
+    <None Include="wwwroot\lib\angular\eve.js" />
+    <None Include="wwwroot\lib\angular\fullcalendar.js" />
+    <None Include="wwwroot\lib\angular\funnel.js" />
+    <None Include="wwwroot\lib\angular\gantt.js" />
+    <None Include="wwwroot\lib\angular\ion.rangeSlider.js" />
+    <None Include="wwwroot\lib\angular\jquery-ui.js" />
+    <None Include="wwwroot\lib\angular\jquery.easing.js" />
+    <None Include="wwwroot\lib\angular\jquery.easypiechart.js" />
+    <None Include="wwwroot\lib\angular\jquery.js" />
+    <None Include="wwwroot\lib\angular\jquery.slimscroll.js" />
+    <None Include="wwwroot\lib\angular\jstree.js" />
+    <None Include="wwwroot\lib\angular\leaflet-src.js" />
+    <None Include="wwwroot\lib\angular\mocha.js" />
+    <None Include="wwwroot\lib\angular\moment.js" />
+    <None Include="wwwroot\lib\angular\morris.js" />
+    <None Include="wwwroot\lib\angular\multipleDatePicker.js" />
+    <None Include="wwwroot\lib\angular\multipleDatePicker.min.js" />
+    <None Include="wwwroot\lib\angular\multiselect.js" />
+    <None Include="wwwroot\lib\angular\ngfile-upload.js" />
+    <None Include="wwwroot\lib\angular\ngJsTree.js" />
+    <None Include="wwwroot\lib\angular\ngStorage.js" />
+    <None Include="wwwroot\lib\angular\pie.js" />
+    <None Include="wwwroot\lib\angular\rangy-classapplier.js" />
+    <None Include="wwwroot\lib\angular\rangy-core.js" />
+    <None Include="wwwroot\lib\angular\rangy-highlighter.js" />
+    <None Include="wwwroot\lib\angular\rangy-selectionsaverestore.js" />
+    <None Include="wwwroot\lib\angular\rangy-serializer.js" />
+    <None Include="wwwroot\lib\angular\rangy-textrange.js" />
+    <None Include="wwwroot\lib\angular\raphael.min.js" />
+    <None Include="wwwroot\lib\angular\responsive.min.js" />
+    <None Include="wwwroot\lib\angular\select.js" />
+    <None Include="wwwroot\lib\angular\serial.js" />
+    <None Include="wwwroot\lib\angular\smart-table.js" />
+    <None Include="wwwroot\lib\angular\sortable.js" />
+    <None Include="wwwroot\lib\angular\textAngular-sanitize.js" />
+    <None Include="wwwroot\lib\angular\textAngular.js" />
+    <None Include="wwwroot\lib\angular\textAngularSetup.js" />
+    <None Include="wwwroot\lib\angular\ui-bootstrap-tpls.js" />
+    <None Include="wwwroot\lib\angular\worldLow.js" />
+    <None Include="wwwroot\lib\angular\xeditable.js" />
+    <None Include="wwwroot\modules\app.js" />
+    <None Include="wwwroot\modules\masters\pemain\pemainCtrl.js" />
+    <None Include="wwwroot\modules\masters\tim\timCtrl.js" />
+    <None Include="wwwroot\modules\transactions\skorhasil\skorhasilCtrl.js" />
+    <None Include="wwwroot\modules\transactions\hasil\hasilCtrl.js" />
+    <None Include="wwwroot\modules\transactions\jadwal\jadwalCtrl.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+﻿
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>@ViewBag.Title</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <strong>@ViewBag.Title</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div ng-controller="SkorhasilCtrl">
+    <div class="wrapper wrapper-content  animated fadeInRight" ng-init="initLoad()">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th hidden>Id </th>
+                            <th>Skor Tim Tamu</th>
+                            <th>Skor Tuan Rumah</th>
+                            <th>Pencetak Gol</th>
+                            <th>Waktu Cetak</th>
+                            <th>Status Aktif</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in listDetail">
+                        <tr class="clickableRow" ng-click="selectTableRow($index, item)" ng-class="{selected : item.id === selectedIdDetail}">
+                            <td hidden>
+                                {{item.id}}
+                            </td>
+                            <td>
+                                {{item.tim}}
+                            </td>
+                            <td>
+                                {{item.pemain}}
+                            </td>
+                            <td>
+                                {{item.skor}}
+                            </td>
+                            <td>
+                                {{item.menitSkor}}
+                            </td>
+                            <td>
+                                {{item.flag}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

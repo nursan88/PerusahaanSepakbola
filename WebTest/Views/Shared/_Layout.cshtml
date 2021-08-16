@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="Frontend">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ayo Indonesia</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/chosen/bootstrap-chosen.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/ionicons.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/angular-toastr.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/bootstrap-select.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/bootstrap-switch.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/bootstrap-tagsinput.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/fullcalendar.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/angular-progress-button-styles.min.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/ion.rangeSlider.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/ion.rangeSlider.skinFlat.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/textAngular.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/xeditable.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/style.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/multipleDatePicker.css">
+    <link rel="stylesheet" type="text/css" href="~/lib/angular/select.css">
+
+    <style>
+        .ui-select-choices.ui-select-choices-content.ui-select-dropdown.dropdown-menu {
+            opacity: 100 !important;
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ayo Indonesia Maju</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Master" asp-action="MasterPemain">Pemain</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Master" asp-action="MasterTim">TIM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Transaksi" asp-action="JadwalPertandingan">Jadwal Pertandingan</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Ayo Indonesia Maju - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script asp-append-version="true" src="~/lib/angular/jquery.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script asp-append-version="true" src="~/lib/angular/jquery-ui.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/jquery.easing.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-route.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-slimscroll.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/smart-table.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-toastr.tpls.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-touch.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-progress-button-styles.min.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-table.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/jquery.slimscroll.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/sortable.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/dropdown.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/bootstrap-select.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/bootstrap-switch.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/bootstrap-tagsinput.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/moment.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/fullcalendar.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/leaflet-src.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-ui-router.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angulardnd.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/multipleDatePicker.min.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/eve.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/checklist-model.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/raphael.min.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/mocha.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/ion.rangeSlider.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/ui-bootstrap-tpls.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-animate.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-filter.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/rangy-core.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/rangy-classapplier.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/rangy-highlighter.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/rangy-selectionsaverestore.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/rangy-serializer.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/rangy-textrange.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/textAngular.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/textAngular-sanitize.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/textAngularSetup.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/xeditable.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/jstree.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/ngJsTree.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/select.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/angular-cookies.min.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/ngStorage.js"></script>
+    <script asp-append-version="true" src="~/lib/angular/ngfile-upload.js"></script>
+    <script asp-append-version="true" src="~/modules/app.js"></script>
+
+    <script asp-append-version="true" src="~/modules/masters/pemain/pemainCtrl.js"></script>
+    <script asp-append-version="true" src="~/modules/masters/tim/timCtrl.js"></script>
+
+    @*Setiap Modul Angularjs di registrasiin disini*@
+    <script asp-append-version="true" src="~/modules/masters/pemain/pemainCtrl.js"></script>
+    <script asp-append-version="true" src="~/modules/masters/tim/timCtrl.js"></script>
+
+    <script asp-append-version="true" src="~/modules/transactions/jadwal/jadwalCtrl.js"></script>
+    <script asp-append-version="true" src="~/modules/transactions/hasil/hasilCtrl.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

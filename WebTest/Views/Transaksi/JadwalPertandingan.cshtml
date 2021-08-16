@@ -1,0 +1,92 @@
+﻿
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>@ViewBag.Title</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <strong>@ViewBag.Title</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div ng-controller="JadwalCtrl">
+    <div class="wrapper wrapper-content  animated fadeInRight" ng-init="initLoad()">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="Id">Id</label>
+                            <input disabled type="text" ng-model="jadwal.id_jadwal" name="jadwal" class="form-control" id="Id_pemain" placeholder="Id">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Jadwal">Tanggal Pertandingan</label>
+                            <input type="datetime-local" ng-model="jadwal.tanggalPertandingan" class="form-control" name="jadwal" id="TanggalPertandingan" placeholder="Waktu Pertandingan">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Jadwal">Tim Tuan Rumah</label>
+                            <select class="form-control" title="Jadwal" ng-model="jadwal.timTuanRumahId_tim" ng-options="item.id_tim as item.namaTim for item in listTim"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Jadwal">Tim Tamu</label>
+                            <select class="form-control" title="Jadwal" ng-model="jadwal.timTamuId_tim" ng-options="item.id_tim as item.namaTim for item in listTim"></select>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <input type="checkbox" ng-model="jadwal.flag" name="flag" class="i-checks" id="Flag" ng-checked=true>
+                            <label for="Flag">Status Aktif</label>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:25px;">
+                        <div class="col-lg-12">
+                            <div class="col-lg-3">
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Simpan()">Simpan</button>
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Hapus()">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th hidden>Id </th>
+                            <th>Tanggal Pertandingan</th>
+                            <th>Waktu Pertandingan</th>
+                            <th>Tim Tuan Rumah</th>
+                            <th>Tim Tamu</th>
+                            <th>Status Aktif</th>
+                            <th>Lihat Hasil</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in listJadwal">
+                        <tr class="clickableRow" ng-click="selectTableRow($index, item)" ng-class="{selected : item.id_jadwal === selectedIdJadwal}">
+                            <td hidden>
+                                {{item.id_jadwal}}
+                            </td>
+                            <td>
+                                {{formatDate(item.tanggalPertandingan)}}
+                            </td>
+                            <td>
+                                {{item.waktuPertandingan}}
+                            </td>
+                            <td>
+                                {{item.timTuanRumah.namaTim}}
+                            </td>
+                            <td>
+                                {{item.timTamu.namaTim}}
+                            </td>
+                            <td>
+                                {{item.flag}}
+                            </td>
+                            <td>
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Hasil(item)">Hasil</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

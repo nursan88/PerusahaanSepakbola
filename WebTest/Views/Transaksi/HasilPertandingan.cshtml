@@ -1,0 +1,110 @@
+﻿
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>@ViewBag.Title</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <strong>@ViewBag.Title</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div ng-controller="HasilCtrl">
+    <div class="wrapper wrapper-content  animated fadeInRight" ng-init="initLoad()">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="Id">Id</label>
+                            <input disabled type="text" ng-model="hasil.id_hasil" name="id_hasilpertandingan" class="form-control" id="id_hasilpertandingan" placeholder="Id">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Hasil">Skor Tim Tuan Rumah</label>
+                            <input type="number" ng-model="hasil.skorTimTuanRumah" class="form-control" name="hasil" id="TotalSkor" placeholder="Total Skor">
+                        </div>
+
+                        <div class="col-lg-3">
+                            <label for="Hasil">Skot Tim Tamu</label>
+                            <input type="number" ng-model="hasil.skorTimTamu" class="form-control" name="hasil" id="id_pemain_cetak_skor" placeholder="Pencetak Gol">
+                        </div>
+
+                        <div class="col-lg-3">
+                            <input type="checkbox" ng-model="hasil.flag" name="flag" class="i-checks" id="Flag" ng-checked=true>
+                            <label for="Flag">Status Aktif</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12" style="margin-top:10px">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button style="width:100%;" class="btn btn-primary" ng-click="TambahSkorTimTuanRumah()">Tambah Skor</button>
+                            </div>
+                            <div class="col-lg-12" ng-repeat="skor in hasil.skorPertandingan">
+                                <div class="row">
+                                    <div class="col-lg-1">
+                                        <span ng-click="HapusSkorTimTuanRumah($index,hasil.skorPertandingan)" class="btn btn-danger">X</span>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label for="tim">Tim Pemain</label>
+                                        <select class="form-control" title="hasil" ng-change="Check(skor)" ng-model="skor.timId_tim" ng-options="item.id_tim as item.namaTim for item in listTim | myFilter:filterTim"></select>
+                                    </div><div class="col-lg-3">
+                                        <label for="tim">Pemain</label>
+                                        <select class="form-control" title="hasil" ng-model="skor.pemainId_pemain" ng-options="item.id_pemain as item.namaPemain for item in listPemain | filter:{timPemainId_tim: skor.timId_tim}"></select>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label for="Hasil">Skor</label>
+                                        <input type="number" ng-model="skor.skor" class="form-control" name="hasil" id="Skor" placeholder="Skor">
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <label for="Hasil">Waktu Cetak Gol *menit</label>
+                                        <input type="number" ng-model="skor.menitSkor" class="form-control" name="hasil" id="MenitSkor" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:25px;">
+                        <div class="col-lg-12">
+                            <div class="col-lg-3">
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Simpan()">Simpan</button>
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Hapus()">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th hidden>Id </th>
+                            <th>Skor Tim Tamu</th>
+                            <th>Skor Tuan Rumah</th>
+                            <th>Status Aktif</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in listHasil">
+                        <tr class="clickableRow" ng-click="selectTableRow($index, item)" ng-class="{selected : item.id_hasil === selectedIdHasil}">
+                            <td hidden>
+                                {{item.id_hasil}}
+                            </td>
+                            <td>
+                                {{item.skorTimTamu}}
+                            </td>
+                            <td>
+                                {{item.skorTimTuanRumah}}
+                            </td>
+                            <td>
+                                {{item.flag}}
+                            </td>
+                            <td>
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Skorhasil(item)">Detail</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+﻿
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>@ViewBag.Title</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <strong>@ViewBag.Title</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div ng-controller="TimCtrl">
+    <div class="wrapper wrapper-content  animated fadeInRight" ng-init="initLoad()">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label for="Id">Id</label>
+                            <input disabled type="text" ng-model="tim.id_tim" name="Id_tim" class="form-control" id="Id_tim" placeholder="Id">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Tim">Nama TIM</label>
+                            <input type="text" ng-model="tim.namaTim" class="form-control" name="tim" id="NamaTim" placeholder="Nama TIM">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Tim">Logo Tim</label>
+                            <input type="text" ng-model="tim.logoTim" class="form-control" name="tim" id="LogoTim" placeholder="Logo Tim">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Tim">Tahun Berdiri</label>
+                            <input type="number" ng-model="tim.tahunBerdiri" class="form-control" name="tim" id="TahunBerdiri" placeholder="Tahun Berdiri">
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Tim">Alamat Tim</label>
+                            <textarea type="text" ng-model="tim.alamatTim" class="form-control" name="tim" id="AlamatTim" placeholder="Alamat Tim"> </textarea>
+                        </div>
+                        <div class="col-lg-3">
+                            <label for="Tim">Kota Tim</label>
+                            <input type="text" ng-model="tim.kotaTim" class="form-control" name="tim" id="KotaTim" placeholder="Kota Tim">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="checkbox" ng-model="tim.flag" name="flag" class="i-checks" id="Flag" ng-checked=true>
+                            <label for="Flag">Status Aktif</label>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:25px;">
+                        <div class="col-lg-12">
+                            <div class="col-lg-3">
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Simpan()">Simpan</button>
+                                <button style="width:100px;" class="btn btn-primary" ng-click="Hapus()">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th hidden>Id </th>
+                            <th>Nama Tim</th>
+                            <th>Logo Tim</th>
+                            <th>Tahun Berdiri</th>
+                            <th>Alamat Tim</th>
+                            <th>Kota Tim</th>
+                            <th>Status Aktif</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="item in listTim">
+                        <tr class="clickableRow" ng-click="selectTableRow($index, item)" ng-class="{selected : item.id_tim === selectedIdTim}">
+                            <td hidden>
+                                {{item.id_tim}}
+                            </td>
+                            <td>
+                                {{item.namaTim}}
+                            </td>
+                            <td>
+                                {{item.logoTim}}
+                            </td>
+                            <td>
+                                {{item.tahunBerdiri}}
+                            </td>
+                            <td>
+                                {{item.alamatTim}}
+                            </td>
+                            <td>
+                                {{item.kotaTim}}
+                            </td>
+                            <td>
+                                {{item.flag}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
